@@ -1,4 +1,4 @@
-/* Copyright 2026 上海如静知华信息科技有限公司 */
+/* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 package cn.zhuatech.contractai.service;
 import jakarta.validation.constraints.*; import org.springframework.stereotype.Service; import java.math.BigDecimal; import java.time.LocalDate; import java.time.temporal.ChronoUnit; import java.util.*;
 /** 合同条款、金额、履约和续约信号的可解释风险评估。 */
