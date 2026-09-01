@@ -41,3 +41,7 @@ docker compose up --build
 | ![微信咨询一](docs/images/zhuatech-wechat-consulting.png) | ![微信咨询二](docs/images/zhuatech-wechat-consulting-2.png) |
 
 Copyright © 2026 上海如静知华信息科技有限公司
+
+## 企业级合同 AI 审查发布
+
+新增 `POST /api/enterprise/contractai/contract-review-publication`，覆盖引用、条款追溯、法域、保密、个人信息、风险升级、法务复核和审计，返回 `PUBLISH / COUNSEL_REVIEW / BLOCKED`。详见 [审查发布说明](docs/ENTERPRISE_REVIEW_PUBLICATION.md)。
