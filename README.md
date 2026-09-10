@@ -44,4 +44,10 @@ Copyright © 2026 上海如静知华信息科技有限公司
 
 ## 企业级合同 AI 审查发布
 
+`POST /api/enterprise/contractai/contract-review-publication` 对审查结论执行条款追溯、法域、保密、隐私、重大风险升级与法务批准门禁。
+
+## 合同义务履约与续约监控
+
+`POST /api/enterprise/contractai/obligation-execution` 将付款、交付、报告、合规和续约义务转换为可执行台账，计算到期/逾期状态与暴露金额，并处理履约证据、例外审批、交易对手制裁、法务保全和自动续约通知期。详见[义务履约说明](docs/ENTERPRISE_OBLIGATION_EXECUTION.md)。
+
 新增 `POST /api/enterprise/contractai/contract-review-publication`，覆盖引用、条款追溯、法域、保密、个人信息、风险升级、法务复核和审计，返回 `PUBLISH / COUNSEL_REVIEW / BLOCKED`。详见 [审查发布说明](docs/ENTERPRISE_REVIEW_PUBLICATION.md)。
