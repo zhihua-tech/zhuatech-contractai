@@ -7,9 +7,16 @@ import org.springframework.stereotype.Service;
 import java.math.*;
 import java.util.*;
 
-/** 汇总合同组合的交易对手集中度、法域、制裁与自动续约风险。 */
+/**
+ * 汇总合同组合的交易对手集中度、法域、制裁与自动续约风险。
+ *
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class ContractPortfolioRiskService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result assess(Request request) {
         BigDecimal calculated = request.counterparties().stream().map(Counterparty::exposure)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
@@ -36,15 +43,27 @@ public class ContractPortfolioRiskService {
                 List.copyOf(blockers), List.copyOf(warnings), List.copyOf(actions));
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String portfolioId, @DecimalMin("0.01") BigDecimal totalExposure,
             @DecimalMin("0") @DecimalMax("1") BigDecimal maxSingleCounterpartyRate,
             @DecimalMin("0") BigDecimal maxHighRiskExposure,
             @NotEmpty List<@Valid Counterparty> counterparties) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Counterparty(@NotBlank String counterpartyCode, @DecimalMin("0") BigDecimal exposure,
             boolean highRiskJurisdiction, boolean sanctionsMatch, boolean autoRenewal,
             boolean expiresWithinNoticeWindow, boolean terminationNoticeSent) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(Decision decision, BigDecimal calculatedExposure,
             BigDecimal largestCounterpartyRate, BigDecimal highRiskExposure,
             List<String> blockers, List<String> warnings, List<String> actions) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public enum Decision { MONITOR, REVIEW, BLOCKED }
 }

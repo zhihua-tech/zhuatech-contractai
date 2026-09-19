@@ -9,10 +9,16 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 class ContractObligationExecutionServiceTest {
     private final ContractObligationExecutionService service = new ContractObligationExecutionService();
     private final LocalDate today = LocalDate.of(2026, 9, 11);
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test
     void keepsVerifiedObligationsOnTrack() {
         var result = service.evaluate(request(List.of(obligation("O1", today.plusDays(30), false,
@@ -22,6 +28,9 @@ class ContractObligationExecutionServiceTest {
                 .isEqualTo(ContractObligationExecutionService.ObligationState.ON_TRACK);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test
     void requiresActionForMissingEvidenceAndUpcomingDuty() {
         var result = service.evaluate(request(List.of(
@@ -34,6 +43,9 @@ class ContractObligationExecutionServiceTest {
         assertThat(result.actions()).hasSize(2);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test
     void escalatesCriticalOverdueExposureAndMissedRenewalNotice() {
         var result = service.evaluate(request(List.of(obligation("O1", today.minusDays(9), true,
@@ -43,6 +55,9 @@ class ContractObligationExecutionServiceTest {
         assertThat(result.overdueExposure()).isEqualByComparingTo("500000");
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test
     void blocksSanctionedCounterparty() {
         var base = request(List.of(obligation("O1", today.plusDays(30), false,
@@ -53,6 +68,9 @@ class ContractObligationExecutionServiceTest {
                 .isEqualTo(ContractObligationExecutionService.Decision.BLOCKED);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     private ContractObligationExecutionService.ExecutionRequest request(
             List<ContractObligationExecutionService.Obligation> obligations, boolean autoRenewal,
             LocalDate noticeDate, boolean renewalDecision) {
@@ -60,6 +78,9 @@ class ContractObligationExecutionServiceTest {
                 true, true, false, autoRenewal, noticeDate, renewalDecision, true);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     private ContractObligationExecutionService.Obligation obligation(
             String id, LocalDate dueDate, boolean critical,
             ContractObligationExecutionService.ObligationStatus status, boolean evidence) {

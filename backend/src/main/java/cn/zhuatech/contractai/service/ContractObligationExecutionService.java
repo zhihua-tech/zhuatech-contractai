@@ -14,9 +14,16 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
-/** 对合同义务、证据、续约通知期和重大违约风险执行统一履约决策。 */
+/**
+ * 对合同义务、证据、续约通知期和重大违约风险执行统一履约决策。
+ *
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class ContractObligationExecutionService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public ExecutionResult evaluate(ExecutionRequest request) {
         List<String> blockers = new ArrayList<>();
         List<String> actions = new ArrayList<>();
@@ -92,12 +99,18 @@ public class ContractObligationExecutionService {
         return result(Decision.ON_TRACK, overdueExposure, decisions, blockers, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     private ObligationDecision decision(Obligation obligation, ObligationState state,
                                         long dayMetric, String reason) {
         return new ObligationDecision(obligation.obligationId(), obligation.type(), state,
                 obligation.owner(), dayMetric, obligation.exposureAmount(), reason);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     private ExecutionResult result(Decision decision, BigDecimal overdueExposure,
                                    List<ObligationDecision> obligations, List<String> blockers,
                                    List<String> actions) {
@@ -105,6 +118,9 @@ public class ContractObligationExecutionService {
                 List.copyOf(blockers), List.copyOf(actions));
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record ExecutionRequest(
             @NotBlank String contractNo,
             @NotNull LocalDate asOfDate,
@@ -118,6 +134,9 @@ public class ContractObligationExecutionService {
             boolean monitoringEnabled
     ) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Obligation(
             @NotBlank String obligationId,
             @NotNull ObligationType type,
@@ -130,15 +149,33 @@ public class ContractObligationExecutionService {
             boolean exceptionApproved
     ) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record ObligationDecision(String obligationId, ObligationType type, ObligationState state,
                                      String owner, long dayMetric, BigDecimal exposureAmount, String reason) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record ExecutionResult(Decision decision, BigDecimal overdueExposure,
                                   List<ObligationDecision> obligations, List<String> blockers,
                                   List<String> actions) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public enum ObligationType { PAYMENT, DELIVERY, REPORTING, COMPLIANCE, RENEWAL }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public enum ObligationStatus { OPEN, COMPLETED, WAIVED, DISPUTED }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public enum ObligationState { ON_TRACK, DUE_SOON, OVERDUE, COMPLETED, EVIDENCE_MISSING,
         EXCEPTION_REVIEW, EXCEPTION_APPROVED }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public enum Decision { ON_TRACK, ACTION_REQUIRED, LEGAL_ESCALATION, BLOCKED }
 }

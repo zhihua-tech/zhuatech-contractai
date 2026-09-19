@@ -6,8 +6,14 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class ContractReviewPublicationService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Assessment assess(Request request) {
         List<String> blockers = new ArrayList<>();
         List<String> actions = new ArrayList<>();
@@ -32,12 +38,21 @@ public class ContractReviewPublicationService {
         return new Assessment(Decision.PUBLISH, blockers, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String reviewId, boolean sourceCitationsVerified,
                           boolean clauseTraceabilityComplete, boolean jurisdictionConfirmed,
                           boolean confidentialityControlsEnabled, boolean piiHandlingApproved,
                           boolean materialRiskDetected, boolean materialRiskEscalated,
                           boolean qualifiedCounselReviewed, boolean modelVersionRecorded,
                           boolean auditTrailComplete, boolean finalLegalApprovalComplete) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Assessment(Decision decision, List<String> blockers, List<String> actions) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public enum Decision { PUBLISH, COUNSEL_REVIEW, BLOCKED }
 }
