@@ -51,3 +51,7 @@ Copyright © 2026 上海如静知华信息科技有限公司
 `POST /api/enterprise/contractai/obligation-execution` 将付款、交付、报告、合规和续约义务转换为可执行台账，计算到期/逾期状态与暴露金额，并处理履约证据、例外审批、交易对手制裁、法务保全和自动续约通知期。详见[义务履约说明](docs/ENTERPRISE_OBLIGATION_EXECUTION.md)。
 
 新增 `POST /api/enterprise/contractai/contract-review-publication`，覆盖引用、条款追溯、法域、保密、个人信息、风险升级、法务复核和审计，返回 `PUBLISH / COUNSEL_REVIEW / BLOCKED`。详见 [审查发布说明](docs/ENTERPRISE_REVIEW_PUBLICATION.md)。
+
+## 合同组合风险监控
+
+`POST /api/enterprise/contractai/portfolio-risk` 汇总交易对手敞口，检查单一交易对手集中度、高风险法域、制裁命中和自动续约通知窗口，输出 `MONITOR / REVIEW / BLOCKED`，补齐单份合同之外的组合风险视角。
