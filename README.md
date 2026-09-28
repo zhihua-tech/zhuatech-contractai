@@ -1,5 +1,7 @@
 # Zhuatech ContractAI｜知华合同智能审查平台
 
+[简体中文](README.md) | [English](README.en.md)
+
 面向中小企业法务、采购、销售和项目交付团队的合同全生命周期社区版。系统对必备条款、无限责任、付款偏离、重大金额、自动续约与到期日进行可解释评分，不替代法务人员作出最终决定。
 
 [知华科技官网](https://www.zhuatech.cn/) · 上海如静知华信息科技有限公司 · Java 包名 `cn.zhuatech.contractai`
