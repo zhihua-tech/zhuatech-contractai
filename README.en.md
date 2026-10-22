@@ -1,5 +1,9 @@
 [简体中文](README.md) | **English**
 
+## Functional update: Contract obligation deadline ledger
+
+Builds an explicit obligation deadline ledger with completed, overdue, due-soon and open states, using a caller-supplied review date rather than the server clock. Available to signed-in users with editable inputs, explicit validation and JSON export. See [API, examples and limitations](docs/AI_BUSINESS_UPGRADE_20261023.md). No external model calls or automatic business changes. Existing license and contact details are retained.
+
 # ZhuaTech ContractAI
 
 > A source-available enterprise project by [ZhuaTech](https://www.zhuatech.cn/) for enterprise AI-assisted workflows with human governance.
