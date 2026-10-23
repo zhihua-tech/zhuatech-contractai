@@ -1,0 +1,67 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "PASS",
+      "requiredGuarantee": "#100000",
+      "requiredExpiry": "2027-01-30"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "guaranteeAmount": "99999.99"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "amountGap": "#0.01"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "guaranteeExpiry": "2027-01-29"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "verified": "NO"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "amountGap": "#100000"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "performanceEnd": "2200-12-31",
+      "bufferDays": "1"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "guaranteeExpiry": "2026-10-22"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "bufferDays": "0",
+      "guaranteeExpiry": "2026-12-31"
+    },
+    "expected": {
+      "decision": "PASS"
+    },
+    "error": false
+  }
+]
