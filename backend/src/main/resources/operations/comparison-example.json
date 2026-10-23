@@ -1,0 +1,6 @@
+{
+  "patch": {
+    "guaranteeAmount": "99999.99"
+  },
+  "description": "有效保函金额改为99999.99"
+}

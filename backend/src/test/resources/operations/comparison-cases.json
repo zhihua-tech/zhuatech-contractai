@@ -1,0 +1,89 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "PASS",
+      "requiredGuarantee": "#100000",
+      "requiredExpiry": "2027-01-30"
+    },
+    "error": false,
+    "baseline": {
+      "decision": "PASS",
+      "requiredGuarantee": "#100000",
+      "requiredExpiry": "2027-01-30"
+    }
+  },
+  {
+    "patch": {
+      "guaranteeAmount": "99999.99"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "amountGap": "#0.01"
+    },
+    "error": false,
+    "baseline": {
+      "decision": "PASS",
+      "requiredGuarantee": "#100000",
+      "requiredExpiry": "2027-01-30"
+    }
+  },
+  {
+    "patch": {
+      "guaranteeExpiry": "2027-01-29"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false,
+    "baseline": {
+      "decision": "PASS",
+      "requiredGuarantee": "#100000",
+      "requiredExpiry": "2027-01-30"
+    }
+  },
+  {
+    "patch": {
+      "verified": "NO"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "amountGap": "#100000"
+    },
+    "error": false,
+    "baseline": {
+      "decision": "PASS",
+      "requiredGuarantee": "#100000",
+      "requiredExpiry": "2027-01-30"
+    }
+  },
+  {
+    "patch": {
+      "guaranteeExpiry": "2026-10-22"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false,
+    "baseline": {
+      "decision": "PASS",
+      "requiredGuarantee": "#100000",
+      "requiredExpiry": "2027-01-30"
+    }
+  },
+  {
+    "patch": {
+      "bufferDays": "0",
+      "guaranteeExpiry": "2026-12-31"
+    },
+    "expected": {
+      "decision": "PASS"
+    },
+    "error": false,
+    "baseline": {
+      "decision": "PASS",
+      "requiredGuarantee": "#100000",
+      "requiredExpiry": "2027-01-30"
+    }
+  }
+]
